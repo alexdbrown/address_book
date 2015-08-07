@@ -8,12 +8,14 @@
             <h1>Your Address Book</h1>
 
             {% if contacts is not empty %}
-                <p>Here are all of your contacts:</p>
+                <h4>Here are all of your contacts:</h4>
                 <ul>
                     {% for contact in contacts %}
-                        <li>{{ contact.getName }}</li>
-                        <li>{{ contact.getPhone }}</li>
-                        <li>{{ contact.getAddress }}</li>
+                        <strong><li>{{ contact.getName }}</li></strong>
+                            <ul>
+                                <li>{{ contact.getPhone }}</li>
+                                <li>{{ contact.getAddress }}</li>
+                            </ul>
                     {% endfor %}
                 </ul>
             {% endif %}
@@ -31,7 +33,10 @@
                     <label for='address'>Contact Address:</label>
                     <input id='address' name='address' class='form-control' type='text'>
                 </div>
-            <button type='submit' class='btn-danger'>Add Contact Info</button>
+                <button type='submit' class='btn-info'>Add Contact Info</button>
+            </form>
+            <form action='/delete_contacts' method='post'>
+                <button type='submit' class='btn-danger'>Clear All</button>
             </form>
         </div>
     </body>

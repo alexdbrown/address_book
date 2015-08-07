@@ -54,7 +54,7 @@
 
         static function deleteAll()
         {
-            $_SESSION['list_of_addresses'];
+            $_SESSION['list_of_addresses'] = array();
         }
 
     }
